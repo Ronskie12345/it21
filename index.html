@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Classes</title>
+</head>
+<body>
+    <h1>Hello World of OOP</h1>
+    
+    <!-- Object person1 details -->
+    <h1 id="person1-name"></h1>
+    <h1 id="person1-age"></h1>
+    <h1 id="person1-occupation"></h1>
+    
+    <!-- Class Person instance details -->
+    <h1 id="person2-details"></h1>
+    <h1 id="person3-details"></h1>
+
+    <script>
+       //Input
+        const person1 = {
+            name: "Cliff Amadeus",
+            age: 23,
+            occupation: "hqr",
+            introduce: function() {
+                return `Hi, I'm ${this.name}, a ${this.age}-year-old working as a ${this.occupation}.`;
+            }
+        };
+
+        // Process and Output for person1 object
+        document.getElementById("person1-name").innerHTML = "Name: " + person1.name;
+        document.getElementById("person1-age").innerHTML = "Age: " + person1.age;
+        document.getElementById("person1-occupation").innerHTML = "Occupation: " + person1.occupation;
+
+        // Define a class 'Person'
+        class Person {
+            constructor(name, age, occupation) {
+                this.name = name;
+                this.age = age;
+                this.occupation = occupation;
+            }
+
+            introduce() {
+                return `Hi, I'm ${this.name}, a ${this.age}-year-old working as a ${this.occupation}.`;
+            }
+        }
+
+        // Creating instances of the class Person
+        const person2 = new Person("Jordan Smith", 30, "developer");
+        const person3 = new Person("Alex Doe", 28, "designer");
+
+        // Process and Output for class Person instances
+        document.getElementById("person2-details").innerHTML = person2.introduce();
+        document.getElementById("person3-details").innerHTML = person3.introduce();
+
+    </script>
+</body>
+</html>
